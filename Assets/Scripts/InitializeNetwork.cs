@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 /*#if ENABLE_UNET
 
 namespace UnityEngine.Networking
 {*/
-	public class InitializeNetwork : MonoBehaviour
+public class InitializeNetwork : MonoBehaviour
 	{
-//		public NetworkManager manager;
-
 		void Awake()
 		{
 			DontDestroyOnLoad (gameObject);
@@ -45,7 +44,8 @@ namespace UnityEngine.Networking
 
 	public void ResetGame()
 	{
-		Application.LoadLevel (Application.loadedLevel);
+		
+		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 	}
 }
 //}
