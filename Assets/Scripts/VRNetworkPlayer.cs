@@ -6,7 +6,6 @@ public class VRNetworkPlayer : NetworkBehaviour {
 
 	public Camera mainCamera;
 	public AudioListener listener;
-	public VRMouseLook vrMouseLook;
 	public GameObject reticle;
 	public enum ReticleVisible 
 	{
@@ -22,13 +21,11 @@ public class VRNetworkPlayer : NetworkBehaviour {
 		if (isLocalPlayer) {
 			listener.enabled = true;
 			mainCamera.enabled = true;
-			vrMouseLook.enabled = true;
 		} 
 		else 
 		{
 			listener.enabled = false;
 			mainCamera.enabled = false;
-			vrMouseLook.enabled = false;
 		}
 
 		if (reticleVisible == ReticleVisible.None) 

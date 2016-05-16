@@ -2,11 +2,11 @@
 
 /* this script is for development purposes. attach this to 
  * the camera you want to control, then you'll be able to
- * control it using mouse controls in the editor
+ * control it using mouse controls in the editor. Make sure
+ * this is not enabled when you're ready to build.
  */
 
 public class VRMouseLook : MonoBehaviour {
-
 	#if UNITY_EDITOR
 
 	private float mouseX = 0;
