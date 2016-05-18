@@ -45,16 +45,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Cardboard\Editor\CardboardAudioListenerEditor.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardAudioRoomEditor.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardAudioSourceEditor.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardEditor.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardGazeEditor.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardMenu.cs" />
+     <Compile Include="Assets\Cardboard\Editor\CardboardSetup.cs" />
+     <Compile Include="Assets\Cardboard\Editor\StereoControllerEditor.cs" />
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
      <None Include="Assets\README.txt" />
+     <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
      <None Include="Assets\VRSampleScenes\Shaders\UnlitTransparentParam.shader" />
      <None Include="Assets\Plugins\Android\assets\OSIG_Readme.txt" />
      <None Include="Assets\VRSampleScenes\Shaders\UIOverlay.shader" />
      <None Include="Assets\VRSampleScenes\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\VRSampleScenes\Shaders\SlidingUV.shader" />
      <None Include="Assets\VRSampleScenes\Shaders\SeparableAlpha.shader" />
      <None Include="Assets\VRSampleScenes\Fonts\LICENSE.txt" />
+     <None Include="Assets\Cardboard\Resources\UI\CardboardReticleShader.shader" />
+     <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-/*#if ENABLE_UNET
 
 namespace UnityEngine.Networking
-{*/
-public class InitializeNetwork : MonoBehaviour
+{
+	public class InitializeNetwork : MonoBehaviour
 	{
+		public NetworkManager manager;
+
 		void Awake()
 		{
 			DontDestroyOnLoad (gameObject);
-			/*
 			manager = GetComponent<NetworkManager>();
 			//enable match maker
 			manager.StartMatchMaker();
 
-			if (manager.matches == null && isPlayer1) {
+			if (manager.matches == null) {
 				//create internet match
 				manager.matchMaker.CreateMatch ("default", 4, true, "", manager.OnMatchCreate);
 			}
-
+			/*
 			if (!isPlayer1) {
 				//find internet match
 				manager.matchMaker.ListMatches (0, 20, "", manager.OnMatchList);
@@ -42,11 +42,10 @@ public class InitializeNetwork : MonoBehaviour
 			}
 		}
 
-	public void ResetGame()
-	{
+		public void ResetGame()
+		{
 		
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		}
 	}
-}
-//}
-//#endif //ENABLE_UNET
+};

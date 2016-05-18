@@ -108,7 +108,6 @@ GameObject:
   - 114: {fileID: 11471126}
   - 114: {fileID: 11423444}
   - 114: {fileID: 11492162}
-  - 114: {fileID: 11463224}
   - 114: {fileID: 11479360}
   m_Layer: 0
   m_Name: MainCameraNetwork
@@ -178,12 +177,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.15
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -485,20 +484,6 @@ MonoBehaviour:
   m_DebugRayLength: 5
   m_DebugRayDuration: 1
   m_RayLength: 500
---- !u!114 &11463224
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7aaf2d611af1cd478b78ab6c8fbab99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableYaw: 1
-  autoRecenterPitch: 1
-  autoRecenterRoll: 1
 --- !u!114 &11471126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -584,7 +569,7 @@ MonoBehaviour:
   mainCamera: {fileID: 2094234}
   listener: {fileID: 8125568}
   reticle: {fileID: 186214}
-  reticleVisible: 0
+  reticleVisible: 1
 --- !u!124 &12423504
 Behaviour:
   m_ObjectHideFlags: 1
