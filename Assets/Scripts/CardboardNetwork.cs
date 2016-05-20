@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
-public class VRNetworkPlayer : NetworkBehaviour {
+public class CardboardNetwork : NetworkBehaviour {
 
-	public Camera mainCam;
-	public AudioListener listener;
+	public Camera[] attachedCams;
 	public GameObject reticle;
+	public Transform dummyCardboard;
 	public enum ReticleVisible 
 	{
 		None,
@@ -14,18 +14,25 @@ public class VRNetworkPlayer : NetworkBehaviour {
 		All
 	};
 	public ReticleVisible reticleVisible;
+	public GameObject cardboardPrefab;
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
+		attachedCams = GetComponentsInChildren<Camera> ();
 		if (isLocalPlayer) {
-			listener.enabled = true;
-			mainCam.enabled = true;
+			GameObject cardboard = Instantiate (cardboardPrefab);
+			cardboard.transform.parent = this.transform;
+			cardboard.transform.localPosition = new Vector3 (0, 0, 0);
+			cardboard.transform.localEulerAngles = new Vector3 (0, 0, 0);
+			dummyCardboard.GetComponent<CopyTransform>().target = cardboard.transform.GetChild (0);
+			foreach (Camera cam in attachedCams)
+				cam.enabled = true;
 		} 
 		else 
 		{
-			listener.enabled = false;
-			mainCam.enabled = true;
+			foreach (Camera cam in attachedCams)
+				cam.enabled = false;
 		}
 
 		if (reticleVisible == ReticleVisible.None) 

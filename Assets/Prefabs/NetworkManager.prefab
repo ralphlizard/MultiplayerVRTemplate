@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 489296}
   - 114: {fileID: 11425164}
   - 114: {fileID: 11403624}
-  - 114: {fileID: 11437802}
+  - 114: {fileID: 11473302}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: NetworkManager
@@ -111,18 +111,21 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   matchName: default
   matchSize: 4
---- !u!114 &11437802
+--- !u!114 &11473302
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcf15ce6fec471547b27ffd6e6cdd53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  cardboardPlayer: {fileID: 184236, guid: 4335c3913e813324aad5f10a2ea09739, type: 2}
+  oculusPlayer: {fileID: 182210, guid: 2b612a3d58112cb45a6229a4364a76c1, type: 2}
+  gearPlayer: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
