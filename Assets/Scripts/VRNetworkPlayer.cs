@@ -25,7 +25,7 @@ public class VRNetworkPlayer : NetworkBehaviour {
 		else 
 		{
 			listener.enabled = false;
-			mainCam.enabled = true;
+			mainCam.enabled = false;
 		}
 
 		if (reticleVisible == ReticleVisible.None) 

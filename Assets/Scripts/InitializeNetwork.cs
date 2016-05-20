@@ -7,7 +7,15 @@ namespace UnityEngine.Networking
 {
 	public class InitializeNetwork : MonoBehaviour
 	{
+		public enum TestType
+		{
+			Oculus,
+			Cardboard
+		};
+
+		public TestType testType;
 		public NetworkManager manager;
+		public GameObject chosenPlayer;
 		public GameObject cardboardPlayer;
 		public GameObject oculusPlayer;
 		public GameObject gearPlayer;
@@ -19,26 +27,35 @@ namespace UnityEngine.Networking
 			//enable match maker
 			manager.StartMatchMaker();
 
-			#if UNITY_EDITOR 
-			manager.playerPrefab = cardboardPlayer;
-			VRSettings.enabled = true;
-			#endif
-
-			#if UNITY_5_3
-			manager.playerPrefab = oculusPlayer;
+			#if UNITY_STANDALONE
+			chosenPlayer = oculusPlayer;
 			VRSettings.enabled = true;
 			#endif
 
 			#if UNITY_ANDROID
-			manager.playerPrefab = cardboardPlayer;
-			#endif
-
-			/*
-			#if UNITY_IOS
-			manager.playerPrefab = cardboardPlayer;
+			chosenPlayer = cardboardPlayer;
 			VRSettings.enabled = false;
 			#endif
-			*/
+
+			#if UNITY_EDITOR 
+			if (testType == TestType.Oculus)
+			{
+				print(VRSettings.enabled);
+				chosenPlayer = oculusPlayer;
+				VRSettings.enabled = true;
+				print(VRSettings.enabled);
+			}
+			else if (testType == TestType.Cardboard)
+			{
+				chosenPlayer = cardboardPlayer;
+				VRSettings.enabled = false;
+			}
+			#endif
+
+			#if UNITY_IOS
+			chosenPlayer = cardboardPlayer;
+			VRSettings.enabled = false;
+			#endif
 		}
 
 		void Update()
