@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489296}
-  - 114: {fileID: 11403624}
   - 114: {fileID: 11472352}
+  - 114: {fileID: 11427738}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: NetworkManager
@@ -30,7 +30,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11403624
+--- !u!114 &11427738
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -38,13 +38,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 145996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Script: {fileID: 11500000, guid: df92a799f4bf36f4da4aa54205d52079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   showGUI: 1
-  offsetX: 0
-  offsetY: 0
+  offsetX: 1
+  offsetY: 1
 --- !u!114 &11472352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   matchName: default
   matchSize: 4
-  testType: 0
+  testType: 1
   cardboardPlayer: {fileID: 184236, guid: 4335c3913e813324aad5f10a2ea09739, type: 2}
   oculusPlayer: {fileID: 182210, guid: 2b612a3d58112cb45a6229a4364a76c1, type: 2}
   gearPlayer: {fileID: 0}

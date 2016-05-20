@@ -56,6 +56,7 @@ public class NetworkCustom : NetworkManager {
 		#if UNITY_EDITOR
 		if (testType == TestType.Oculus)
 		{
+			VRSettings.loadedDevice = VRDeviceType.Oculus;
 			VRSettings.enabled = true;
 			print("VR enabled : " + VRSettings.enabled);
 			print("Editor Oculus chosen");
@@ -63,25 +64,31 @@ public class NetworkCustom : NetworkManager {
 		}
 		else if (testType == TestType.Cardboard)
 		{
+			VRSettings.loadedDevice = VRDeviceType.None;
+			print("VR enabled : " + VRSettings.enabled);
 			VRSettings.enabled = false;
-			print("Editor Cardboard chosen");
+			print("VR enabled : " + VRSettings.enabled);
+			print("Editor Oculus chosen");
 			return PlayerType.Cardboard;
 		}
 		#endif
 
 		#if UNITY_STANDALONE
+		VRSettings.loadedDevice = VRDeviceType.Oculus;
 		VRSettings.enabled = true;
 		print("Standalone Oculus chosen");
 		return PlayerType.Oculus;
 		#endif
 
 		#if UNITY_ANDROID
+		VRSettings.loadedDevice = VRDeviceType.None;
 		VRSettings.enabled = false;
 		print("Android Cardboard chosen");
 		return PlayerType.Cardboard;
 		#endif
 
 		#if UNITY_IOS
+		VRSettings.loadedDevice = VRDeviceType.None;
 		VRSettings.enabled = false;
 		print("iOS Cardboard chosen");
 		return PlayerType.Cardboard;
